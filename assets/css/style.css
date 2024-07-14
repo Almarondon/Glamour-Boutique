@@ -1,0 +1,233 @@
+/* VERSION MOVIL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+.container {
+  display: grid;
+  grid-template-areas:
+    "aside"
+    "nav"
+    "products"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------- Aside---- */
+.aside {
+  grid-area: aside;
+  background-color: steelblue;
+  padding: 5px;
+}
+.list-aside {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+.parrafos-aside {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.icon-shoes {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+}
+.fa-solid {
+  margin-top: 20px;
+}
+
+.fa-solid fa-bars {
+  justify-content: end;
+  font-size: 20px;
+  padding: 10px;
+}
+/* -------- Navegacion---- */
+.nav {
+  grid-area: nav;
+  background-color: rgb(195, 193, 193);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.precio {
+  width: 70%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+/* -------- Main----- */
+.products {
+  grid-area: products;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.product {
+  background-color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px;
+  border: 1px solid rgb(108, 107, 107);
+  border-radius: 0.25rem;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  position: center;
+
+  padding: 10px;
+}
+.img-container img {
+  justify-content: center;
+  height: 200px;
+  object-fit: cover;
+}
+.button {
+  color: white;
+  background-color: steelblue;
+  padding: 10px;
+}
+/* -------Pagination */
+.pagination {
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+}
+.pagination a {
+  color: rgb(3, 87, 155);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* -------- Footer---- */
+.container-footer {
+  grid-area: footer;
+  background-color: rgb(3, 87, 155);
+  padding: 20px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 10px;
+}
+h4 {
+  margin: 0;
+  padding: 0;
+}
+/* -------------------------------------------------
+------------------------------------------------- */
+/*- MEDIA QUERYS -------------- */
+@media (width > 576px) {
+  body {
+    overflow: hidden;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    grid-template-rows: auto 73% auto;
+    padding: 10px;
+    grid-template-areas:
+      "aside nav"
+      "aside main"
+      "footer pagination";
+  }
+  /* ------Aside */
+  .aside {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+  }
+  .list-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .icono-hamb {
+    display: none;
+  }
+  /* main */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    overflow-y: scroll;
+    height: 500px;
+  }
+  .product {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .img-container {
+    position: relative;
+    width: 100px;
+    padding: 20px;
+  }
+  .img-container img {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    height: 200px;
+    /* object-fit: cover; */
+  }
+  /* -------Pagination */
+  .pagination {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+  }
+  .pagination a {
+    color: rgb(3, 87, 155);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* -------- Footer---- */
+  .container-footer {
+    grid-area: footer;
+    background-color: rgb(3, 87, 155);
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 10px;
+  }
+  .container-footer p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+}
